@@ -35,7 +35,7 @@ The investigation followed a simple forensic approach:
 The main log file used during the first part of the investigation was:
 
 ```bash
-/var/log/auth.log
+/var/log/auth.log.1
 ```
 
 This file is important because it records login activity, sudo usage, authentication events, and other privilege-related actions.
@@ -51,7 +51,7 @@ The first step was to inspect commands executed with elevated privileges.
 Since the question asked about a package installation, I narrowed the output by searching for installation-related commands:
 
 ```bash
- sudo cat /var/log/auth.log | grep install
+ sudo cat /var/log/auth.log.1 | grep install
 ```
 
 This revealed that the user ran the following command:
